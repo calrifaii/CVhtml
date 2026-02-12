@@ -5,70 +5,105 @@
   <title>Chahnaz ALRIFAII - CV</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 40px;
       color: #222;
-      line-height: 1.5;
+      line-height: 1.6;
+      background: #f9f9f9;
     }
 
     h1 {
-      font-size: 28px;
+      font-size: 32px;
       text-transform: uppercase;
       margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     .header p {
       margin: 2px 0;
+      font-size: 14px;
+      color: #555;
     }
 
-    /* Accordion styles */
+    /* Accordion container */
     .accordion {
-      margin-top: 25px;
-      border-top: 1px solid #ddd;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .accordion:hover {
+      transform: translateY(-3px);
     }
 
     .accordion-header {
       cursor: pointer;
-      padding: 12px 0;
+      padding: 18px 24px;
       font-size: 20px;
-      font-weight: bold;
-      border-bottom: 2px solid #000;
+      font-weight: 600;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: #eaeaea;
+      transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: #d4d4d4;
     }
 
     .accordion-header span {
-      font-size: 18px;
-      transition: transform 0.2s ease;
+      font-size: 22px;
+      transition: transform 0.3s ease;
     }
 
     .accordion-header.active span {
       transform: rotate(45deg);
+      color: #007acc;
     }
 
     .accordion-content {
-      display: none;
-      padding-top: 10px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.3s ease;
+      padding: 0 24px;
+      background: #fff;
+    }
+
+    .accordion-content.open {
+      padding: 18px 24px;
     }
 
     h3 {
       font-size: 16px;
       margin-top: 15px;
+      color: #007acc;
     }
 
-    p {
-      margin: 4px 0;
+    p, ul {
+      margin: 6px 0;
+      color: #333;
     }
 
     ul {
-      margin: 8px 0 8px 20px;
+      margin-left: 20px;
     }
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
   </style>
@@ -78,10 +113,8 @@
 
   <div class="header">
     <h1>Chahnaz ALRIFAII</h1>
-    <p>Phone: 0753098639</p>
-    <p>Email: rifaichahnaz@gmail.com</p>
-    <p>Address: Paris</p>
-    <p>LinkedIn: www.linkedin.com/in/alrifaiichahnaz</p>
+    <p>Phone: 0753098639 | Email: rifaichahnaz@gmail.com</p>
+    <p>Address: Paris | LinkedIn: www.linkedin.com/in/alrifaiichahnaz</p>
   </div>
 
   <!-- Profile -->
@@ -107,7 +140,6 @@
       <span>+</span>
     </div>
     <div class="accordion-content">
-
       <h3>Employée polyvalente | Job d’été | Paris</h3>
       <p><strong>Loomi Gastronomie Libanaise</strong></p>
       <ul>
@@ -135,7 +167,6 @@
         <li>Gestion d’équipes et leadership</li>
         <li>Reporting et suivi de projets humanitaires</li>
       </ul>
-
     </div>
   </div>
 
@@ -208,13 +239,20 @@
         headers.forEach(h => {
           if (h !== header) {
             h.classList.remove('active');
-            h.nextElementSibling.style.display = 'none';
+            h.nextElementSibling.style.maxHeight = null;
+            h.nextElementSibling.classList.remove('open');
           }
         });
 
         header.classList.toggle('active');
         const content = header.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          content.classList.remove('open');
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.classList.add('open');
+        }
       });
     });
   </script>
