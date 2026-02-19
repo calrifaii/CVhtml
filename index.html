@@ -33,7 +33,6 @@
       color: #555;
     }
 
-    /* Accordion container */
     .accordion {
       max-width: 900px;
       margin: 0 auto 20px;
@@ -106,6 +105,63 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
+
+    /* FORM STYLE */
+
+    .contact-form {
+      margin-top: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: 'Inter', sans-serif;
+      transition: 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #007acc;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0,122,204,0.3);
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    .submit-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background: #007acc;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #005f99;
+    }
+
   </style>
 </head>
 
@@ -119,115 +175,102 @@
 
   <!-- Profile -->
   <div class="accordion">
-    <div class="accordion-header">
-      Profile
-      <span>+</span>
-    </div>
+    <div class="accordion-header">Profile <span>+</span></div>
     <div class="accordion-content">
       <p>
         À la recherche d’un stage, je suis passionnée par la communication et le marketing.
         Engagée, à l’écoute et curieuse, je souhaite évoluer dans un cadre où l’interaction,
-        l’efficacité et la pensée créative guident les projets, tout en mettant mes compétences
-        au service d’initiatives innovantes et stimulantes.
+        l’efficacité et la pensée créative guident les projets.
       </p>
     </div>
   </div>
 
   <!-- Experience -->
   <div class="accordion">
-    <div class="accordion-header">
-      Professional Experience
-      <span>+</span>
-    </div>
+    <div class="accordion-header">Professional Experience <span>+</span></div>
     <div class="accordion-content">
-      <h3>Employée polyvalente | Job d’été | Paris</h3>
+      <h3>Employée polyvalente | Paris</h3>
       <p><strong>Loomi Gastronomie Libanaise</strong></p>
       <ul>
-        <li>Design des nouveaux menus et création d’un nouveau logo</li>
-        <li>Gestion des réseaux sociaux, vidéaste et photographie</li>
-        <li>Accueil et service client</li>
-        <li>Gestion des commandes et coordination des tâches</li>
-        <li>Caissière</li>
-      </ul>
-
-      <h3>Design Graphique et Marketing | 2024 | Liban</h3>
-      <p><strong>Horizon Web Solution</strong></p>
-      <ul>
-        <li>Création de visuels pour campagnes digitales</li>
-        <li>Étude des personas</li>
-        <li>Stratégie de contenu</li>
-        <li>Analyse des performances visuelles</li>
-      </ul>
-
-      <h3>Chargée de Service Bénéficiaires & Chef de Projet | 2016–2023</h3>
-      <p><strong>ONG internationales</strong></p>
-      <ul>
-        <li>Analyse des besoins et solutions adaptées</li>
-        <li>Coordination terrain et partenaires</li>
-        <li>Gestion d’équipes et leadership</li>
-        <li>Reporting et suivi de projets humanitaires</li>
+        <li>Design menus & logo</li>
+        <li>Gestion réseaux sociaux</li>
+        <li>Service client & caisse</li>
       </ul>
     </div>
   </div>
 
   <!-- Education -->
   <div class="accordion">
-    <div class="accordion-header">
-      Education
-      <span>+</span>
-    </div>
+    <div class="accordion-header">Education <span>+</span></div>
     <div class="accordion-content">
-      <p><strong>Mastère 1 Humanités Numériques</strong><br>Université Paris 8 | 2025–2027</p>
-      <p><strong>Certificat Marketing Digital</strong><br>HubSpot | 2025</p>
-      <p><strong>DUEF B1 / B2</strong><br>Université d’Avignon | 2024–2025</p>
-      <p><strong>Licence Design Graphique</strong><br>LIU | 2023</p>
+      <p><strong>Mastère Humanités Numériques</strong> – Paris 8</p>
+      <p><strong>Licence Design Graphique</strong> – LIU</p>
     </div>
   </div>
 
   <!-- Skills -->
   <div class="accordion">
-    <div class="accordion-header">
-      Skills
-      <span>+</span>
-    </div>
+    <div class="accordion-header">Skills <span>+</span></div>
     <div class="accordion-content">
       <div class="skills-grid">
-
         <div>
-          <h3>Graphisme</h3>
-          <ul>
-            <li>Identités visuelles</li>
-            <li>Affiches & maquettes</li>
-            <li>Vidéo & motion design</li>
-          </ul>
-
           <h3>Marketing</h3>
           <ul>
             <li>Stratégie de contenu</li>
             <li>Réseaux sociaux</li>
             <li>Storytelling</li>
-            <li>Analyse de données</li>
           </ul>
         </div>
-
         <div>
           <h3>Outils</h3>
           <ul>
-            <li>Adobe Suite, Canva, CapCut</li>
-            <li>GitHub, VS Code, Bubble</li>
-            <li>Notion, Office</li>
-            <li>Meta Ads, Google Analytics</li>
-          </ul>
-
-          <h3>Langues</h3>
-          <ul>
-            <li>Français B2</li>
-            <li>Anglais B2</li>
-            <li>Arabe C2</li>
+            <li>Adobe Suite</li>
+            <li>Canva / CapCut</li>
+            <li>Google Analytics</li>
           </ul>
         </div>
-
       </div>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="accordion">
+    <div class="accordion-header">Contact Me <span>+</span></div>
+    <div class="accordion-content">
+      <form class="contact-form">
+        
+        <div class="form-group">
+          <label>Nom *</label>
+          <input type="text" required>
+        </div>
+
+        <div class="form-group">
+          <label>Prénom *</label>
+          <input type="text" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Sexe *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="sexe" required> Homme</label>
+            <label><input type="radio" name="sexe"> Femme</label>
+            <label><input type="radio" name="sexe"> Autre</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer</button>
+
+      </form>
     </div>
   </div>
 
@@ -246,6 +289,7 @@
 
         header.classList.toggle('active');
         const content = header.nextElementSibling;
+
         if (content.style.maxHeight) {
           content.style.maxHeight = null;
           content.classList.remove('open');
